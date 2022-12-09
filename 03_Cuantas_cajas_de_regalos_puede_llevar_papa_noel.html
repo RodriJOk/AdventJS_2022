@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 3 -> ¿Cuantas cajas de regalos pued llevar Papa Noel ?</title>
+</head>
+<body>
+    <script>
+    // Tienes una caja de regalos de Navidad que Santa Claus quiere entregar a los niños. 
+    // Cada regalo está representado por una cadena. 
+    // Santa Claus tiene un trineo que puede llevar un peso limitado, y cada regalo dentro de la 
+    // caja tiene un peso que es igual al número de letras en el nombre del regalo.
+
+    // Santa Claus también tiene una lista de renos que pueden ayudarlo a entregar los regalos. 
+    // Cada renos tiene un límite de peso máximo que puede llevar. 
+    // El límite de peso máximo de cada reno es igual a dos veces el número de letras en su nombre.
+
+    // Tu tarea es implementar una función distributeGifts(packOfGifts, reindeers) que recibe una caja de 
+    // regalos y una lista de renos y devuelve el número máximo de cajas de estos regalos que 
+    // Santa Claus puede entregar a los niños. Las cajas de regalos no se pueden dividir.
+
+    // const packOfGifts = ["book", "doll", "ball"]
+    // const reindeers = ["dasher", "dancer"]
+    
+    // el pack de regalos pesa 4 + 4 + 4 = 12
+    // los renos pueden llevar (2 * 6) + (2 * 6) = 24
+    // por lo tanto, Santa Claus puede entregar 2 cajas de regalos
+    
+    // distributeGifts(packOfGifts, reindeers) // 2
+    // Cosas a tener en cuenta:
+    
+    // Las cajas de regalos no se pueden dividir.
+    // Los nombres de los regalos y los renos siempre serán mayores que 0.
+    
+    // const distributeGifts = (packOfGifts, reindeers) =>{
+    //     let pesoRegalos = 0;
+    //     let pesoReno = 0;
+    //     packOfGifts.map((regalo) => {
+    //         pesoRegalos += regalo.length;
+    //     });
+    //     reindeers.map((reno) => {
+    //         pesoReno += reno.length * 2;
+    //     });
+    //     return Math.floor(pesoReno / pesoRegalos);
+    // }
+
+    // const distributeGifts = (packOfGifts, reindeers) => {
+    //     const pesoRegalos = packOfGifts.reduce((acumulador, regalo) => acumulador + regalo.length, 0);
+    //     const pesoReno = reindeers.reduce((acumulador, reno) => acumulador + reno.length * 2, 0);
+    //     return Math.floor(pesoReno / pesoRegalos);
+    // }
+
+    // function distributeGifts (packOfGifts, reindeers){
+    //     packOfGifts = packOfGifts.reduce((acumulador, regalo) => acumulador + regalo.length, 0);
+    //     reindeers = reindeers.reduce((acumulador, reno) => acumulador + reno.length * 2, 0);
+    //     return Math.floor(reindeers / packOfGifts);
+    // }
+    
+    // function distributeGifts (packOfGifts, reindeers){
+    //     return (Math.floor(reindeers.reduce((acumulador, reno) => acumulador + reno.length * 2, 0) / packOfGifts.reduce((acumulador, regalo) => acumulador + regalo.length, 0)));
+    // }
+    
+    function distributeGifts (packOfGifts, reindeers){
+        return (Math.floor(reindeers.reduce((acumulador, reno) => acumulador + reno.length * 2, 0) / packOfGifts.reduce((acumulador, regalo) => acumulador + regalo.length, 0)));
+    }
+
+    const packOfGifts = ["book", "doll", "ball"]
+    const reindeers = ["dasher", "dancer"]
+    
+    console.log(distributeGifts(packOfGifts, reindeers));
+
+    </script>
+</body>
+</html>

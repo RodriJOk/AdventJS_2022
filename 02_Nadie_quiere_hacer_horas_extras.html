@@ -46,7 +46,28 @@
                 }
             });
         }
-        countHours(2022, ['01/06', '04/01', '12/25'])
+        // function countHours(year, holidays) {
+        //     let horas = 0;
+        //     holidays.forEach(element => {
+        //         if(new Date(element + '/' + year).getDay() >= 1 && new Date(element + '/' + year).getDay() <= 5){
+        //             horas += 2;
+        //         }
+        //     });
+        //     return horas;
+        // }
+        // function countHours(year, holidays) {
+        //     let horas = 0;
+        //     holidays.map(element => {
+        //         if(new Date(element + '/' + year).getDay() >= 1 && new Date(element + '/' + year).getDay() <= 5){
+        //             horas += 2;
+        //         }
+        //     });
+        //     return horas;
+        // }
+
+        function countHours(year, holidays) {
+            return holidays.filter(element => new Date(element + '/' + year).getDay() >= 1 && new Date(element + '/' + year).getDay() <= 5).length * 2;
+        }
     </script>
 </body>
 </html>
